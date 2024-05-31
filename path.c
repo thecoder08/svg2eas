@@ -30,22 +30,62 @@ int parsePath(Point* pointBuffer, char* commands, float resolution) {
     while (command) {
         int gotCommand = 0;
         if (strcmp(command, "M") == 0) {
-            float x = strtof(strtok(NULL, ","), NULL);
-            float y = strtof(strtok(NULL, " "), NULL);
-            printf("moveToAbs (%f, %f)\n", x, y);
-            drawHead.x = x;
-            drawHead.y = y;
-            pointBuffer[pointIndex] = drawHead;
-            pointIndex++;
+            float x;
+            float y;
+            int goingAgain = 0;
+            do {
+                if (!goingAgain) {
+                    x = strtof(strtok(NULL, ","), NULL);
+                    y = strtof(strtok(NULL, " "), NULL);
+                    printf("moveToAbs (%f, %f)\n", x, y);
+                    drawHead.x = x;
+                    drawHead.y = y;
+                    pointBuffer[pointIndex] = drawHead;
+                    pointIndex++;            
+                }
+                else {
+                    Point b = {
+                        .x = x,
+                        .y = y
+                    };
+                    printf("lineToAbs (%f, %f)\n", x, y);
+                    for (float t = 0; t <= 1; t += resolution) {
+                        pointBuffer[pointIndex] = lerp(drawHead, b, t);
+                        pointIndex++;
+                    }
+                    drawHead = b;
+                }
+            }
+            while(notCommand(strtok(NULL, " "), &goingAgain, &x, &y, &gotCommand, &command));
         }
         else if (strcmp(command, "m") == 0) {
-            float x = strtof(strtok(NULL, ","), NULL);
-            float y = strtof(strtok(NULL, " "), NULL);
-            printf("moveToRel (%f, %f)\n", x, y);
-            drawHead.x += x;
-            drawHead.y += y;
-            pointBuffer[pointIndex] = drawHead;
-            pointIndex++;
+            float x;
+            float y;
+            int goingAgain = 0;
+            do {
+                if (!goingAgain) {
+                    x = strtof(strtok(NULL, ","), NULL);
+                    y = strtof(strtok(NULL, " "), NULL);
+                    printf("moveToRel (%f, %f)\n", x, y);
+                    drawHead.x += x;
+                    drawHead.y += y;
+                    pointBuffer[pointIndex] = drawHead;
+                    pointIndex++;            
+                }
+                else {
+                    Point b = {
+                        .x = drawHead.x + x,
+                        .y = drawHead.y + y
+                    };
+                    printf("lineToRel (%f, %f)\n", x, y);
+                    for (float t = 0; t <= 1; t += resolution) {
+                        pointBuffer[pointIndex] = lerp(drawHead, b, t);
+                        pointIndex++;
+                    }
+                    drawHead = b;
+                }
+            }
+            while(notCommand(strtok(NULL, " "), &goingAgain, &x, &y, &gotCommand, &command));
         }
         else if (strcmp(command, "L") == 0) {
             float x;
