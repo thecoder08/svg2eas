@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="640"
+   height="480"
+   viewBox="0 0 640 480"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="austin.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     width="640px"
+     units="px"
+     inkscape:zoom="1.2113552"
+     inkscape:cx="345.48083"
+     inkscape:cy="262.5159"
+     inkscape:window-width="1844"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 59.259148,182.7445 c 66.995792,-7.10584 84.751462,49.90903 84.751462,49.90903 0,0 16.79758,73.10094 -72.666467,68.36845 C -18.11991,296.28949 59.259148,182.7445 59.259148,182.7445 Z"
+       id="path261" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 89.948814,71.472249 c 0,0 88.975666,-0.704646 74.619526,52.454791 -14.35614,53.15944 -83.57294,51.87901 -83.57294,51.87901 0,0 -133.179065,-88.147449 8.953414,-104.333801 z"
+       id="path263" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 144.34754,215.82949 437.28602,2.29785 c 0,0 116.4552,-58.87337 1.85128,-82.04849 -114.60392,-23.17513 -435.2401,26.2449 -435.2401,26.2449 z"
+       id="path265" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 548.47897,132.95782 -0.91964,83.78945"
+       id="path267" />
+  </g>
+</svg>

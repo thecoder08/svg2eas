@@ -4,6 +4,9 @@
 #include <stdio.h>
 
 int notCommand(char* input, int* goingAgain, float* againX, float* againY, int* gotCommand, char** cmd) {
+    if (input == NULL) {
+        return 0;
+    }
     int retval = (strlen(input) != 1);
     *goingAgain = retval;
     if (retval) {
@@ -227,6 +230,40 @@ int parsePath(Point* pointBuffer, char* commands, float resolution) {
                     pointIndex++;
                 }
                 drawHead = c;
+            }
+            while(notCommand(strtok(NULL, " "), &goingAgain, &x1, &y1, &gotCommand, &command));
+        }
+        else if (strcmp(command, "C") == 0) {
+            int goingAgain = 0;
+            float x1;
+            float y1;
+            do {
+                if (!goingAgain) {
+                    x1 = strtof(strtok(NULL, ","), NULL);
+                    y1 = strtof(strtok(NULL, " "), NULL);
+                }
+                Point b = {
+                    .x = x1,
+                    .y = y1
+                };
+                float x2 = strtof(strtok(NULL, ","), NULL);
+                float y2 = strtof(strtok(NULL, " "), NULL);
+                Point c = {
+                    .x = x2,
+                    .y = y2
+                };
+                float x = strtof(strtok(NULL, ","), NULL);
+                float y = strtof(strtok(NULL, " "), NULL);
+                Point d = {
+                    .x = x,
+                    .y = y
+                };
+                printf("cubicBezierAbs (%f, %f), (%f, %f), (%f, %f)\n", x1, y1, x2, y2, x, y);
+                for (float t = 0; t <= 1; t += resolution) {
+                    pointBuffer[pointIndex] = cubicBezier(drawHead, b, c, d, t);
+                    pointIndex++;
+                }
+                drawHead = d;
             }
             while(notCommand(strtok(NULL, " "), &goingAgain, &x1, &y1, &gotCommand, &command));
         }
