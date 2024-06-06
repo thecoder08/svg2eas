@@ -11,7 +11,7 @@
 
 xmlNode* pathNodes[100];
 
-Point points[100000];
+Point points[1000000];
 
 int idx = 0;
 
