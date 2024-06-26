@@ -82,7 +82,7 @@ int main(int argc, char** argv) {
         updateWindow();
         if (currentIndex < offset+1) {
             char pointbuf[100];
-            int length = sprintf(pointbuf, "%d %d\n", points[currentIndex].x*10, points[currentIndex].y*10);
+            int length = sprintf(pointbuf, "%d %d\n", (int)(points[currentIndex].x*13), (int)(points[currentIndex].y*13));
             fputs(pointbuf, stdout);
             write(serial, pointbuf, length);
             currentIndex++;

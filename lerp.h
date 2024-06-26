@@ -1,6 +1,6 @@
 typedef struct {
-    int x;
-    int y;
+    float x;
+    float y;
 } Point;
 
 Point lerp(Point a, Point b, float t);
